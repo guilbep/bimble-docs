@@ -1,0 +1,91 @@
+# The Bimble manual. Build it with `make docs`, preview it with `make docs-serve`.
+[project]
+site_name = "Bimble"
+site_description = "User manual for Bimble, open-source structural BIM"
+site_url = "https://guilbep.github.io/bimble-docs/"
+repo_url = "https://github.com/guilbep/bimble"
+repo_name = "guilbep/bimble"
+edit_uri = "https://github.com/guilbep/bimble-docs/edit/main/docs/"
+docs_dir = "docs"
+site_dir = "site"
+nav = [
+  { "Overview" = "index.md" },
+  { "Manual" = [
+    { "Install" = "manual/install.md" },
+    { "First steps" = "manual/first-steps.md" },
+    { "Looking at a model" = "manual/viewing.md" },
+    { "Comparing with another model" = "manual/linked-models.md" },
+    { "Storey plans" = "manual/plans.md" },
+    { "Editing a model" = "manual/editing.md" },
+    { "History: versions and variants" = "manual/history.md" },
+    { "Graphic styles" = "manual/styles.md" },
+    { "In a browser" = "manual/browser.md" },
+    { "Questions" = "manual/faq.md" },
+  ] },
+  { "Reference" = [
+    { "Command line" = "reference/cli.md" },
+    { "Mouse and keys" = "reference/keys.md" },
+    { "Plan templates" = "reference/plan-template.md" },
+  ] },
+]
+
+# The theme and the Markdown extensions are `zensical new`'s defaults, as in git-board.
+[project.theme]
+language = "en"
+features = [
+  "content.code.copy",
+  "content.code.select",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc.permalink = true
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.magiclink = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+pymdownx.tabbed.combine_header_slug = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.tilde = {}
