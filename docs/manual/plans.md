@@ -90,6 +90,26 @@ They are drawn the same way as plans, turned to look straight at the view:
 What the view hides (its **Visibility**) is left out on paper too. Grid axes and slab levels are
 drawn on plans only; their title is the view's name ("Ceiling Level 1, 1:100").
 
+## Sheets: several views on one page
+
+A sheet is a page with one title block and several views, each at its own scale: a plan at 1:100
+and a section at 1:50, say. A view can be on several sheets. Dimensions and texts drawn in a view
+show wherever the view is placed.
+
+Sheets are saved in the `.bimble` file, or in the side file of an IFC. Until they can be laid out
+in the viewer, make them from the command line:
+
+```sh
+bimble sheet-new model.bimble --name "Formwork level 1" --paper A1 \
+    --place "Plan Level 1:100" --place "Section 1 (looking north):50"   # S-101, views side by side
+bimble sheets model.bimble                                              # number, name, paper, views
+bimble sheet model.bimble S-101 S-101.pdf
+```
+
+The viewer lists them under **Layouts** in the navigator, with **PDF…** to export one. In the title
+block, `{number}` / `{drawing_no}` is the sheet's number, `{drawing}` its name and `{scale}` all its
+scales.
+
 ## Your office's plans: templates
 
 The title block, the words on the sheet and what is shown come from a **plan template**, a JSON

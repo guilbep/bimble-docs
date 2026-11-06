@@ -68,6 +68,8 @@ Any text can contain placeholders, replaced when the plan is drawn:
 | `{storey}` | The storey's name |
 | `{view}` | The view drawn (`bimble plan --view`, or **Draw** in the viewer); empty for a storey plan |
 | `{drawing}` | The view's name, else "Plan *storey*" |
+| `{number}`, `{drawing_no}` | On a sheet: its number (S-101). On a single plan, `drawing_no` comes from the fields |
+| `{sheet}` | On a sheet: its name (also in `{drawing}`) |
 | `{level}` | The storey's level in m, signed: `+3.00` |
 | `{scale}` | `1:100` |
 | `{n}` | `100` |
@@ -213,7 +215,7 @@ A shorter one:
         "entries": [
           {
             "label": "DRAWING N°",
-            "value": "",
+            "value": "{drawing_no}",
             "color": null
           }
         ]
