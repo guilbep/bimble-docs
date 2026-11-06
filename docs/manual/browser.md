@@ -11,7 +11,10 @@ on your computer**: the page reads them in the browser and uploads nothing.
 - Open a file with **Open…**, or drop it on the page.
 - Everything in this manual works the same way, except:
     - **Save**, **Export PDF…**, **Export SVG…** and **Save…** in the style editor download the file;
-    - the [history](history.md) isn't available yet. **History…** is hidden.
+    - the [history](history.md) isn't available yet: **Manage → History** is hidden;
+    - an IFC's views are saved by downloading `model.ifc.bimble-views.json`. To get them back, open
+      the IFC, then open (or drop) that file: Bimble recognises it, checks that its plans are on
+      the model's storeys, and applies its views and sheets.
 
 ## Browsers
 

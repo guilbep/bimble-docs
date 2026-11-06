@@ -13,8 +13,8 @@ bimble demo frame.bimble
 bimble view frame.bimble
 ```
 
-With a `.bimble` model open, the toolbar shows **Undo**, **Redo**, **Save**, **Edit…** and
-**History…**.
+With a `.bimble` model open, the title row's **Undo**, **Redo** and **Save** work, the **Model**
+tab places elements, and **Manage → History** keeps versions.
 
 ## Change an element
 
@@ -40,17 +40,26 @@ Under the properties, **Vector** is a displacement in mm (X, Y, Z), 1000 mm alon
 
 ## Place new elements
 
-**Edit…** opens **Place elements**:
+In the **Model** tab:
 
-1. Choose **Column**, **Beam**, **Wall** or **Slab**. The button stays on while you place.
-2. Choose the **storey**.
+1. Click **Column**, **Beam**, **Wall** or **Slab**. The button stays pressed while you place, and the
+   properties panel shows what you place.
+2. There, choose the **storey**.
 3. Set the sizes: column section, beam width and height, wall or slab thickness.
 4. Click in the view on the storey's level:
     - **Column**: one click, at its centre;
     - **Beam** and **Wall**: two clicks, the start and the end of its axis;
     - **Slab**: two clicks, two opposite corners of a rectangle.
 
-Points are rounded to 10 mm. ++esc++ stops placing.
+A click **snaps**, within 12 pixels, to what is near, strongest first:
+
+1. a crossing of grid axes, a column centre, a corner of an element;
+2. else a grid axis or an element edge (the point slides along it, rounded to 10 mm);
+3. else nothing: the point is rounded to 10 mm.
+
+A marker under the pointer shows the point and what it snapped to ("column centre · 6000, 5000").
+Hold ++shift++ not to snap. Grid axes come from the model, or, when it has none, through its
+columns. ++esc++ stops placing.
 
 Where new elements go:
 
@@ -60,8 +69,8 @@ Where new elements go:
   model's concrete, which is added if the model has none.
 
 !!! tip
-    Look from the top (++t++) to place elements where you mean them. Placing doesn't snap to axes
-    or other elements yet ([#25](https://github.com/guilbep/bimble/issues/25)).
+    Look from the top (++t++), or open a plan, to place elements where you mean them. A beam from
+    column to column, clicked near both centres, goes exactly centre to centre.
 
 ## Undo, redo, save
 

@@ -20,7 +20,7 @@ The section box is for 3D views; plans and sections are cut by their [view range
 instead. The section box (++b++) shows only what is inside a box. Solids it cuts show their cut face, so
 you can see inside walls, slabs and columns.
 
-- Tick **Section box** in the toolbar, or press ++b++. The box starts around the selected element,
+- **View → Section box**, or press ++b++. The box starts around the selected element,
   or around everything visible when nothing is selected.
 - **Drag the arrows** on its faces to move them. A face follows the mouse whatever the view.
 - **Box to selection** fits the box around the selected element, with a small margin.
@@ -34,7 +34,7 @@ The same box can be used from the command line: `bimble render model.ifc out.png
 
 Measure (++m++) takes dimensions on the model: two clicks make one dimension.
 
-1. Tick **Measure** in the toolbar, or press ++m++.
+1. **Model → Measure**, or press ++m++.
 2. Move over the model. The point snaps to what is under the cursor, in this order:
     - a **corner** within 10 pixels;
     - an **edge** within 8 pixels;

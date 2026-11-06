@@ -32,7 +32,7 @@ All of this can be changed with a [plan template](#your-offices-plans-templates)
 
 ## In the viewer
 
-Open a model, then **Plan…** in the toolbar (the window is called **On paper**):
+Open a model, then **Sheets → On paper…** (the window is called **On paper**):
 
 | Setting | What it does |
 |---|---|
@@ -54,6 +54,22 @@ If the plan doesn't fit the paper at that scale, Bimble says so and suggests the
 ```text
 at 1:50 the plan (19.2 × 11.2 m) needs 420 × 271 mm and does not fit on A3; 1:75 fits on A3
 ```
+
+## What a plan shows
+
+Besides what is cut and seen, a plan can show, each switched in **Annotate → On plans** (and in the
+**On paper** window), all on by default:
+
+| Switch | Shows |
+|---|---|
+| **Section labels** | The section of each cut column, beam, member or pile beside it: "30/30" (cm), "Ø30" for a round one, "GL24h 24x46" for timber with a material name. Beams above the cut of a plan get theirs along them |
+| **Openings** | In rectangular slab openings: their size ("100x200", cm), and their distance to the nearest grid axes, as dimensions |
+| **Section marks** | Where each section view cuts the plan: a dash-dot line across the drawing, thick ends, arrows looking the way the section looks, its tag at both ends. The tag is the last short word of the section's name ("Coupe A" → A), else A, B, C… |
+| **Levels** | Top-of-slab levels on the slabs seen below the cut |
+
+The template keys are `element_labels`, `opening_dimensions`, `section_markers` and `slab_levels`.
+
+Pens, line types, text sizes and hatches come from the [Standards](styles.md).
 
 ## From the command line
 
@@ -119,5 +135,5 @@ Colours, hatches and pen widths come from the [graphic style](styles.md), not th
   its own hidden parts, sloped and stepped tops included, but an element that overhangs another
   at a lower height can show wrong lines.
 - Sections have no grid axes or level marks yet ([#24](https://github.com/guilbep/bimble/issues/24)).
-- Openings aren't dimensioned yet. There are no element labels or section markers either
-  ([#24](https://github.com/guilbep/bimble/issues/24)).
+- Opening dimensions go to the nearest grid axes only, not to the nearest face.
+- Section marks are drawn on plans, not on other sections.

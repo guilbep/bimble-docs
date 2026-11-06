@@ -148,6 +148,104 @@ Options:
   -h, --help  Print help
 ```
 
+### sheets
+
+```text
+List the sheets of a model (number, name, paper, the views placed on them)
+
+Usage: bimble sheets <FILE>
+
+Arguments:
+  <FILE>  
+
+Options:
+  -h, --help  Print help
+```
+
+### sheet
+
+```text
+Draw a sheet (its views at their scales, title block, legend) as PDF, SVG or PNG
+
+Usage: bimble sheet [OPTIONS] <FILE> <NUMBER> <OUT>
+
+Arguments:
+  <FILE>    
+  <NUMBER>  Sheet number, e.g. S-101 (see `bimble sheets`)
+  <OUT>     Output: .pdf, .svg or .png
+
+Options:
+      --dpi <DPI>            Resolution of a .png output, dots per inch [default: 150]
+      --style <STYLE>        Graphic style file (see `bimble style`)
+      --template <TEMPLATE>  Plan template: title block, legend, texts (see `bimble plan-template`)
+      --project <PROJECT>    Project name in the title block (default: the file name)
+  -h, --help                 Print help
+```
+
+### sheet-new
+
+```text
+Add a sheet with views laid out side by side, e.g. `bimble sheet-new m.bimble --name Plans --place "Plan Level 1:100" --place "Section 1:50"`. Saved in the .bimble file, or in the side file of an IFC
+
+Usage: bimble sheet-new [OPTIONS] --name <NAME> <FILE>
+
+Arguments:
+  <FILE>  
+
+Options:
+      --name <NAME>      
+      --number <NUMBER>  Sheet number; by default the next free one (S-101, S-102…)
+      --paper <PAPER>    A4, A3, A2, A1 or A0 [default: A1]
+      --portrait         
+      --place <VIEW:N>   A view and its scale, VIEW:N (repeatable, placed left to right)
+  -h, --help             Print help
+```
+
+### schedules
+
+```text
+List the schedules (columns, beams, slabs, walls, footings by material) and their counts
+
+Usage: bimble schedules <FILE>
+
+Arguments:
+  <FILE>  
+
+Options:
+  -h, --help  Print help
+```
+
+### schedule
+
+```text
+A schedule as a table: each element measured (section, length, area, volume), grouped by level with subtotals; printed, or written as CSV for a spreadsheet
+
+Usage: bimble schedule [OPTIONS] <FILE> <NAME>
+
+Arguments:
+  <FILE>  
+  <NAME>  Schedule name, e.g. "Concrete columns" (see `bimble schedules`)
+
+Options:
+      --csv <CSV>  Write CSV here instead of printing a table
+  -h, --help       Print help
+```
+
+### project
+
+```text
+Project information (ADR 0030): print it, or set entries with KEY=VALUE (an empty VALUE removes the entry). Title blocks show each value where they say {KEY}
+
+Usage: bimble project <FILE> [SET]...
+
+Arguments:
+  <FILE>    
+  [SET]...  KEY=VALUE, e.g. client="City of X" project_number=P-001 (repeatable)
+
+Options:
+  -h, --help  Print help
+```
+
 ### plan-template
 
 ```text

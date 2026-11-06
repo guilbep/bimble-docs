@@ -29,6 +29,9 @@ bimble plan model.ifc plan.pdf --storey N01 --template mine.json --field phase="
 | `dimensions` | `true` | Dimension chains, top and left |
 | `slab_levels` | `true` | Top-of-slab levels on the slabs seen below the cut |
 | `opening_crosses` | `true` | A cross in the rectangular openings of slabs seen below the cut |
+| `opening_dimensions` | `true` | Size of rectangular slab openings ("100x200", cm) and their distance to the nearest grid axes |
+| `element_labels` | `true` | Section labels: "30/30" beside cut columns, beams, members and piles, along beams above the cut; "GL24h 24x46" for timber |
+| `section_markers` | `true` | Marks of the section views crossing a plan: line, arrows, tag |
 | `legend` | see below | The legend's words |
 | `title_block` | see below | The title block's columns |
 | `fields` | `{}` | Your own values for placeholders, e.g. `{"phase": "Tender"}` |
@@ -74,7 +77,12 @@ Any text can contain placeholders, replaced when the plan is drawn:
 | `{paper}` | `A2`, or `A2 portrait` |
 | `{date}` | Today, `YYYY-MM-DD` |
 | `{bimble}` | Bimble's version |
-| `{anything}` | The value of `anything` in `fields`, or given with `--field anything=…` |
+| `{client}`, `{project_number}`… | The [project information](../manual/project.md)'s values |
+| `{revision}`, `{drawn}`, `{checked}`, `{phase}` | A sheet's own fields |
+| `{anything}` | The value of `anything`: a sheet's field or `--field anything=…`, else the project information, else the template's `fields` |
+
+A known key with no value yet writes nothing; an unknown key stays as written, so a typo shows on the
+sheet.
 
 An unknown placeholder is left as it is, so a typo shows on the sheet.
 
@@ -132,6 +140,9 @@ A shorter one:
   "dimensions": true,
   "slab_levels": true,
   "opening_crosses": true,
+  "opening_dimensions": true,
+  "element_labels": true,
+  "section_markers": true,
   "legend": {
     "show": true,
     "title": "Legend",
@@ -148,7 +159,12 @@ A shorter one:
         "entries": [
           {
             "label": "PROJECT",
-            "value": "{project}",
+            "value": "{project} {project_number}",
+            "color": null
+          },
+          {
+            "label": "CLIENT",
+            "value": "{client}",
             "color": null
           }
         ]
@@ -188,7 +204,7 @@ A shorter one:
           },
           {
             "label": "REVISION",
-            "value": "",
+            "value": "{revision}",
             "color": null
           }
         ]
@@ -198,12 +214,12 @@ A shorter one:
         "entries": [
           {
             "label": "DRAWN",
-            "value": "",
+            "value": "{drawn}",
             "color": null
           },
           {
             "label": "CHECKED",
-            "value": "",
+            "value": "{checked}",
             "color": null
           }
         ]
@@ -213,7 +229,7 @@ A shorter one:
         "entries": [
           {
             "label": "DRAWING N°",
-            "value": "",
+            "value": "{drawing_no}",
             "color": null
           }
         ]
