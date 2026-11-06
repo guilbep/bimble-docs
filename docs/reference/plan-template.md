@@ -77,7 +77,12 @@ Any text can contain placeholders, replaced when the plan is drawn:
 | `{paper}` | `A2`, or `A2 portrait` |
 | `{date}` | Today, `YYYY-MM-DD` |
 | `{bimble}` | Bimble's version |
-| `{anything}` | The value of `anything` in `fields`, or given with `--field anything=…` |
+| `{client}`, `{project_number}`… | The [project information](../manual/project.md)'s values |
+| `{revision}`, `{drawn}`, `{checked}`, `{phase}` | A sheet's own fields |
+| `{anything}` | The value of `anything`: a sheet's field or `--field anything=…`, else the project information, else the template's `fields` |
+
+A known key with no value yet writes nothing; an unknown key stays as written, so a typo shows on the
+sheet.
 
 An unknown placeholder is left as it is, so a typo shows on the sheet.
 
@@ -154,7 +159,12 @@ A shorter one:
         "entries": [
           {
             "label": "PROJECT",
-            "value": "{project}",
+            "value": "{project} {project_number}",
+            "color": null
+          },
+          {
+            "label": "CLIENT",
+            "value": "{client}",
             "color": null
           }
         ]
@@ -194,7 +204,7 @@ A shorter one:
           },
           {
             "label": "REVISION",
-            "value": "",
+            "value": "{revision}",
             "color": null
           }
         ]
@@ -204,12 +214,12 @@ A shorter one:
         "entries": [
           {
             "label": "DRAWN",
-            "value": "",
+            "value": "{drawn}",
             "color": null
           },
           {
             "label": "CHECKED",
-            "value": "",
+            "value": "{checked}",
             "color": null
           }
         ]
@@ -219,7 +229,7 @@ A shorter one:
         "entries": [
           {
             "label": "DRAWING N°",
-            "value": "",
+            "value": "{drawing_no}",
             "color": null
           }
         ]

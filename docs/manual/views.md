@@ -11,7 +11,7 @@ The top of the left panel lists everything in the model:
 | Section | Holds |
 |---|---|
 | **Views** | 3D views, Plans, Ceiling plans (looking up), Sections. Click one to open it |
-| **Quantities** | Number of elements and volume (m³) per IFC class |
+| **Schedules** | Tables of elements and quantities: click one to open it ([schedules](schedules.md)) |
 | **Layouts** | The [sheets](sheets.md): click one to open it; **New sheet** |
 | **Objects** | The elements by IFC class. Click one to select it and frame it |
 | **Links** | The [linked models](linked-models.md), and every reference plan with its view |

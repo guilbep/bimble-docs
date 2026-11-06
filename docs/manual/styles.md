@@ -9,8 +9,13 @@ An office keeps its standards in one style file and shares it.
 **Manage → Graphic standards** (or "standards" in the [command palette](window.md#the-command-palette))
 opens the **Standards** panel on the right, beside the drawing, so you see each change on it.
 
-- **Load…** reads a style file, **Save…** writes one (only what differs from the default),
-  **Reset** goes back to the default.
+- At the top: where the standards come from (a file, or Bimble's default) and whether they are
+  **changed, not saved**. The title row lists them under *Not saved* too.
+- **Load…** reads a style file; **Save…** writes one (only what differs from the default), and
+  what is saved becomes the reference for *changed*.
+- **Revert** goes back to the file as loaded or last saved.
+- **Reset to default…** puts every standard back to Bimble's default, after asking. Your file is not
+  changed.
 - The search box finds a section by its title or by the name of a type in it ("earth", "red",
   "2.5 mm"): sections that match open, the others hide.
 

@@ -201,6 +201,51 @@ Options:
   -h, --help             Print help
 ```
 
+### schedules
+
+```text
+List the schedules (columns, beams, slabs, walls, footings by material) and their counts
+
+Usage: bimble schedules <FILE>
+
+Arguments:
+  <FILE>  
+
+Options:
+  -h, --help  Print help
+```
+
+### schedule
+
+```text
+A schedule as a table: each element measured (section, length, area, volume), grouped by level with subtotals; printed, or written as CSV for a spreadsheet
+
+Usage: bimble schedule [OPTIONS] <FILE> <NAME>
+
+Arguments:
+  <FILE>  
+  <NAME>  Schedule name, e.g. "Concrete columns" (see `bimble schedules`)
+
+Options:
+      --csv <CSV>  Write CSV here instead of printing a table
+  -h, --help       Print help
+```
+
+### project
+
+```text
+Project information (ADR 0030): print it, or set entries with KEY=VALUE (an empty VALUE removes the entry). Title blocks show each value where they say {KEY}
+
+Usage: bimble project <FILE> [SET]...
+
+Arguments:
+  <FILE>    
+  [SET]...  KEY=VALUE, e.g. client="City of X" project_number=P-001 (repeatable)
+
+Options:
+  -h, --help  Print help
+```
+
 ### plan-template
 
 ```text
