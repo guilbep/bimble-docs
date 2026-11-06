@@ -10,11 +10,12 @@ Usage: bimble [COMMAND]
 
 Commands:
   view           Open the 3D viewer (optionally with a .ifc or .bimble file)
-  plan           Storey plan at scale, as PDF, SVG or PNG (by the output's extension)
+  plan           A storey plan or any view (ceiling plan, section) at scale, as PDF, SVG or PNG (by extension)
   plan-template  Print the default plan template, or check a template file and print it in full
   style          Print the complete default graphic style, or check a style file and print it in full
   demo           Generate the demo concrete frame (2 storeys, 3×2 bays by default)
   info           Summary of a .bimble or .ifc file: counts, materials, triangles, load time
+  views          List the views of a model (plans, ceiling plans, sections), for `plan --view`
   ls             List elements (GlobalId, IFC class, name, generator)
   set            Change one generator parameter, e.g. `bimble set f.bimble <GlobalId> height=600 -o g.bimble`
   diff           Element-level diff between two .bimble files
@@ -111,9 +112,9 @@ Options:
 ### plan
 
 ```text
-Storey plan at scale, as PDF, SVG or PNG (by the output's extension)
+A storey plan or any view (ceiling plan, section) at scale, as PDF, SVG or PNG (by extension)
 
-Usage: bimble plan [OPTIONS] --storey <STOREY> <FILE> <OUT>
+Usage: bimble plan [OPTIONS] <FILE> <OUT>
 
 Arguments:
   <FILE>  
@@ -122,6 +123,7 @@ Arguments:
 Options:
       --dpi <DPI>            Resolution of a .png output, dots per inch [default: 150]
       --storey <STOREY>      Storey name (see `bimble info`)
+      --view <VIEW>          Draw a view instead (a plan with its view range, a ceiling plan, a section) by name, e.g. "Ceiling Level 1"; `bimble views` lists them
       --scale <SCALE>        Scale 1:N, N from 1 to 5000 [default: 100]
       --paper <PAPER>        A4, A3, A2, A1 or A0; by default the smallest that fits
       --cut <CUT>            Height of the cut plane above the storey level, mm [default: 1200]
@@ -130,6 +132,20 @@ Options:
       --template <TEMPLATE>  Plan template: title block, legend, texts, what is shown (see `bimble plan-template`)
       --field <KEY=VALUE>    A title block value, KEY=VALUE, used as {KEY} in the template (repeatable)
   -h, --help                 Print help
+```
+
+### views
+
+```text
+List the views of a model (plans, ceiling plans, sections), for `plan --view`
+
+Usage: bimble views <FILE>
+
+Arguments:
+  <FILE>  
+
+Options:
+  -h, --help  Print help
 ```
 
 ### plan-template

@@ -20,7 +20,7 @@ bimble plan model.ifc plan.pdf --storey N01 --template mine.json --field phase="
 
 | Key | Default | Meaning |
 |---|---|---|
-| `title` | `"Plan {storey}, {scale}"` | Title under the drawing, bold and underlined |
+| `title` | `"Plan {storey}, {scale}"` | Title under the drawing, bold and underlined. Ceiling plans and sections use `"{view}, {scale}"` instead |
 | `level_note` | `"{storey}: {level} m"` | Note above the title block, at the right. `""`: none |
 | `dimension_unit` | `"cm"` | `"mm"`, `"cm"` or `"m"`. cm are whole when they can be, else one decimal (`12.5`) |
 | `hidden_classes` | reinforcement, spaces, openings, annotations, terrain | IFC classes left out of the plan (any letter case) |
@@ -66,6 +66,8 @@ Any text can contain placeholders, replaced when the plan is drawn:
 |---|---|
 | `{project}` | The project name: `--project`, else the file name |
 | `{storey}` | The storey's name |
+| `{view}` | The view drawn (`bimble plan --view`, or **Draw** in the viewer); empty for a storey plan |
+| `{drawing}` | The view's name, else "Plan *storey*" |
 | `{level}` | The storey's level in m, signed: `+3.00` |
 | `{scale}` | `1:100` |
 | `{n}` | `100` |
@@ -156,7 +158,7 @@ A shorter one:
         "entries": [
           {
             "label": "DRAWING",
-            "value": "Plan {storey}",
+            "value": "{drawing}",
             "color": null
           }
         ]
