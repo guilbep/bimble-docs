@@ -2,20 +2,22 @@
 
 ## Properties
 
-Click an element to select it. Its properties open in a panel on the right:
+Click an element to select it, in a 3D view or a plan or section. Its properties replace the
+view's at the bottom of the left panel:
 
 - IFC class, name and GlobalId (selectable, so you can copy it);
 - storey and material, with the material's family;
 - number of triangles and volume, in m³.
 
-++esc++ clears the selection.
+++esc++, or **← View properties**, clears the selection.
 
 In a `.bimble` model, the same panel lets you change the element: see
 [Editing a model](editing.md).
 
 ## Section box
 
-The section box (++b++) shows only what is inside a box. Solids it cuts show their cut face, so
+The section box is for 3D views; plans and sections are cut by their [view range](views.md#view-range)
+instead. The section box (++b++) shows only what is inside a box. Solids it cuts show their cut face, so
 you can see inside walls, slabs and columns.
 
 - Tick **Section box** in the toolbar, or press ++b++. The box starts around the selected element,
@@ -41,7 +43,10 @@ Measure (++m++) takes dimensions on the model: two clicks make one dimension.
     Corners and edges hidden behind something are ignored.
 3. Click the first point, then the second. ++esc++ drops a first point you don't want.
 
-Each dimension is listed under **Measurements** in the left panel with:
+In a plan or a section, the points also snap to the corners and lines of the view's
+[reference plans](views.md#reference-plans).
+
+Each dimension is listed under **Measurements** in the model navigator with:
 
 - the distance;
 - its ΔX, ΔY and ΔZ;
@@ -53,6 +58,6 @@ model is open: they aren't saved in the file yet.
 
 ## Warnings
 
-Problems found while reading a file are listed under **Warnings** at the bottom of the left panel.
+Problems found while reading a file are listed under **Warnings** at the bottom of the model navigator.
 A typical one: an opening that couldn't be cut because a wall's geometry isn't a closed solid. The
 element is then drawn uncut.

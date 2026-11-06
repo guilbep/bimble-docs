@@ -9,7 +9,7 @@ project line up.
 - **Link model…** in the toolbar (once a model is open), or
 - `bimble view structure.ifc --link architecture.ifc`.
 
-The linked model appears under **Linked model** in the left panel. It can be shown three ways:
+The linked model appears under **Links** in the model navigator. It can be shown three ways:
 
 | Mode | Shows |
 |---|---|
