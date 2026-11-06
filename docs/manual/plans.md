@@ -1,6 +1,6 @@
-# Storey plans
+# Plans and sections on paper
 
-Bimble draws a storey plan **at scale** (1:1 to 1:5000), on A4 to A0, as PDF, SVG or PNG. The plan
+Bimble draws a storey plan, or any plan, ceiling plan or section [view](views.md), **at scale** (1:1 to 1:5000), on A4 to A0, as PDF, SVG or PNG. The plan
 is an exact horizontal section of the model, not a screenshot: a 300 mm column is 3 mm on paper
 at 1:100.
 
@@ -32,14 +32,15 @@ All of this can be changed with a [plan template](#your-offices-plans-templates)
 
 ## In the viewer
 
-Open a model, then **Plan…** in the toolbar:
+Open a model, then **Plan…** in the toolbar (the window is called **On paper**):
 
 | Setting | What it does |
 |---|---|
-| Storey | The storey to draw |
+| Draw | **Storey plan**, or one of the model's plans, ceiling plans and sections. It starts on the view you are looking at |
+| Storey | The storey to draw (storey plan only) |
 | Scale 1: | 1:N; type a number or pick 50, 100, 200, 500 |
 | Paper | A4…A0, or **Smallest that fits** (landscape or portrait) |
-| Cut height | Height of the cut plane above the storey level, mm |
+| Cut height | Height of the cut plane above the storey level, mm (storey plan only; a view uses its view range) |
 | Seen fills, Axes, Dimensions, Legend, Levels | Switch those parts on or off |
 | Template… | Load a plan template (JSON); **Default** goes back to the built-in one |
 
@@ -64,8 +65,30 @@ bimble plan model.ifc plan.png --storey "Level 1" --dpi 200
 bimble plan model.ifc plan.pdf --storey "Level 1" --cut 900   # cut 0.9 m above the level
 ```
 
+A view, by its name (`bimble views` lists them; letter case doesn't matter):
+
+```sh
+bimble views model.ifc                                          # plans, ceiling plans, sections
+bimble plan model.ifc ceiling.pdf --view "Ceiling Level 1"
+bimble plan model.bimble section.pdf --view "Section 1 (looking north)" --scale 50
+```
+
+For an IFC file, its views come from `model.ifc.bimble-views.json` next to it, if there is one.
+
 The output's extension chooses the format. All the options are in the
 [command-line reference](../reference/cli.md#plan).
+
+## Ceiling plans and sections
+
+They are drawn the same way as plans, turned to look straight at the view:
+
+- a **ceiling plan** looks up from its cut plane to its view depth, with north up and east to the
+  right, like the screen: the slab soffit and beams are seen, the columns are cut;
+- a **section** is cut through its point, looking north, east, south or west, and shows what lies
+  beyond the cut up to its depth (all of it when the depth is 0).
+
+What the view hides (its **Visibility**) is left out on paper too. Grid axes and slab levels are
+drawn on plans only; their title is the view's name ("Ceiling Level 1, 1:100").
 
 ## Your office's plans: templates
 
@@ -92,7 +115,9 @@ Colours, hatches and pen widths come from the [graphic style](styles.md), not th
 
 ## Limits
 
-- Hidden lines are removed correctly for flat tops only. A sloped slab or a stair can show lines
-  that should be hidden ([#22](https://github.com/guilbep/bimble/issues/22)).
+- What is seen below the cut is painted from the lowest element to the highest. Each element hides
+  its own hidden parts, sloped and stepped tops included, but an element that overhangs another
+  at a lower height can show wrong lines.
+- Sections have no grid axes or level marks yet ([#24](https://github.com/guilbep/bimble/issues/24)).
 - Openings aren't dimensioned yet. There are no element labels or section markers either
   ([#24](https://github.com/guilbep/bimble/issues/24)).

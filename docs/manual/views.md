@@ -142,6 +142,11 @@ far apart they are.
 
 The tick box next to its name shows or hides it; **Remove** takes it out of the view.
 
+## On paper
+
+Any plan, ceiling plan or section can be printed at scale: **Plan…** in the toolbar draws the view
+you are looking at. See [Plans and sections on paper](plans.md).
+
 ## Where views are saved
 
 - In a **`.bimble` model**, views are part of the model: saved with it, undone with ++ctrl+z++, and
