@@ -12,9 +12,9 @@ The top of the left panel lists everything in the model:
 |---|---|
 | **Views** | 3D views, Plans, Ceiling plans (looking up), Sections. Click one to open it |
 | **Quantities** | Number of elements and volume (m³) per IFC class |
-| **Layouts** | **Storey plan on paper…** opens the [plan window](plans.md) |
+| **Layouts** | The [sheets](sheets.md): click one to open it; **New sheet** |
 | **Objects** | The elements by IFC class. Click one to select it and frame it |
-| **Links** | The [linked model](linked-models.md), and every reference plan with its view |
+| **Links** | The [linked models](linked-models.md), and every reference plan with its view |
 | **Measurements** | The dimensions you took (see [Measuring](viewing.md#measuring)) |
 | **Warnings** | Problems found while reading the file |
 
@@ -47,7 +47,7 @@ In a plan or a section:
   fit;
 - the view cube, Home, the section box and perspective are off: the view is cut by its range;
 - clicking selects, the properties panel edits, ++m++ measures, as in 3D;
-- placing elements (**Edit…**) in a plan puts them on that plan's storey.
+- placing elements (**Model** tab) in a plan puts them on that plan's storey.
 
 **Ceiling plans** look up at the underside of the floor above, like a reflected ceiling plan:
 north stays at the top and east on the right.
@@ -144,17 +144,18 @@ The tick box next to its name shows or hides it; **Remove** takes it out of the 
 
 ## On paper
 
-Any plan, ceiling plan or section can be printed at scale: **Plan…** in the toolbar draws the view
-you are looking at. See [Plans and sections on paper](plans.md).
+Any plan, ceiling plan or section can be printed at scale: **Sheets → On paper…** draws the view
+you are looking at. See [Plans and sections on paper](plans.md), and [Sheets](sheets.md) to put
+several views on one page.
 
 ## Where views are saved
 
 - In a **`.bimble` model**, views are part of the model: saved with it, undone with ++ctrl+z++, and
   kept in its [history](history.md).
 - An **IFC file** is never changed. Its views go in a file next to it, named after it:
-  `model.ifc.bimble-views.json`. **Save views** in the toolbar, or ++ctrl+s++, writes it; it is read
-  the next time you open the IFC. In a browser, it is downloaded instead, and can't be read back
-  there yet.
+  `model.ifc.bimble-views.json`. **Save**, or ++ctrl+s++, writes it; it is read the next time you
+  open the IFC. In a browser, it is downloaded instead; open or drop it after the IFC to get the
+  views back.
 
 Reference plans are stored inside the view (as lines in mm), so the model or the side file carries
 them: the original DXF or PDF is no longer needed.

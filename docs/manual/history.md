@@ -15,7 +15,7 @@ text.
 
 ## In the viewer
 
-With a `.bimble` model open, click **History…**.
+With a `.bimble` model open, click **Manage → History**.
 
 - **No history yet:** type a message and click **Start history and commit**.
 - **On a branch:** the window shows the branch and how many changes aren't committed. Type a

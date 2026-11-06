@@ -31,7 +31,9 @@ In a plan or a section, dragging pans (there is nothing to orbit), or moves the 
 | ++h++ | Hatching on / off |
 | ++b++ | Section box on / off |
 | ++m++ | Measure on / off |
-| ++esc++ | Stop placing; else drop the first point of a dimension; else clear the selection |
+| ++ctrl+k++ | Command palette: find and run any command |
+| ++esc++ | Close the palette; else stop placing; else drop the first point of a dimension; else clear the selection |
+| ++shift++ while placing | Don't snap: the point is only rounded to 10 mm |
 
 ## Editing (`.bimble` models)
 

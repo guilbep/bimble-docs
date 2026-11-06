@@ -29,6 +29,9 @@ bimble plan model.ifc plan.pdf --storey N01 --template mine.json --field phase="
 | `dimensions` | `true` | Dimension chains, top and left |
 | `slab_levels` | `true` | Top-of-slab levels on the slabs seen below the cut |
 | `opening_crosses` | `true` | A cross in the rectangular openings of slabs seen below the cut |
+| `opening_dimensions` | `true` | Size of rectangular slab openings ("100x200", cm) and their distance to the nearest grid axes |
+| `element_labels` | `true` | Section labels: "30/30" beside cut columns, beams, members and piles, along beams above the cut; "GL24h 24x46" for timber |
+| `section_markers` | `true` | Marks of the section views crossing a plan: line, arrows, tag |
 | `legend` | see below | The legend's words |
 | `title_block` | see below | The title block's columns |
 | `fields` | `{}` | Your own values for placeholders, e.g. `{"phase": "Tender"}` |
@@ -132,6 +135,9 @@ A shorter one:
   "dimensions": true,
   "slab_levels": true,
   "opening_crosses": true,
+  "opening_dimensions": true,
+  "element_labels": true,
+  "section_markers": true,
   "legend": {
     "show": true,
     "title": "Legend",

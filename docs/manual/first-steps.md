@@ -4,7 +4,7 @@
 
 Start the viewer and open a file in one of these ways:
 
-- **Open…** in the toolbar;
+- **Open…** in the title row;
 - drop a `.ifc` or `.bimble` file on the window;
 - from a terminal: `bimble view model.ifc`.
 
@@ -71,7 +71,7 @@ classes** and **storeys**, with the number of elements in each. Untick one to hi
 tick it again to show them. What you hide is kept with the view: the plan of a storey can hide the
 footings while the 3D view shows everything.
 
-The toolbar switches **Edges** (++e++) and **Hatching** (++h++) on and off. Hatching is the pattern
+The **View** tab switches **Edges** (++e++) and **Hatching** (++h++) on and off. Hatching is the pattern
 drawn on each material: concrete stipple, timber grain, and so on.
 
 ## What next
