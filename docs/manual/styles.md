@@ -44,7 +44,8 @@ The `paper` part of a style sets plans, in mm on the printed sheet. It is set in
 the editor in the viewer doesn't show it yet.
 
 - **pens**: cut outlines (0.5), seen edges (0.18), dashed edges above the cut (0.13, dash 2 / gap 1),
-  hatches (0.13), frame (0.5), axes and dimensions (0.13);
+  hatches (0.13), frame (0.5), dimensions (0.13), grid axes dash-dot (0.13; dash 12 / gap 1.5 /
+  dot 0.5 / gap 1.5, in `axis_pen_mm` and `axis_dash_mm`);
 - **text height**: 2.5;
 - **how much lighter** seen elements are than cut ones (0.6).
 

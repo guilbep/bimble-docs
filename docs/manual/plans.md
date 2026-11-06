@@ -94,6 +94,5 @@ Colours, hatches and pen widths come from the [graphic style](styles.md), not th
 
 - Hidden lines are removed correctly for flat tops only. A sloped slab or a stair can show lines
   that should be hidden ([#22](https://github.com/guilbep/bimble/issues/22)).
-- Grid axes are long dashes, not dash-dot ([#23](https://github.com/guilbep/bimble/issues/23)).
 - Openings aren't dimensioned yet. There are no element labels or section markers either
   ([#24](https://github.com/guilbep/bimble/issues/24)).
