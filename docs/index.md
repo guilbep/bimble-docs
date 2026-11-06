@@ -5,8 +5,9 @@ uses IFC as its data model, and treats the drawing as the product.
 
 With Bimble you can:
 
-- **open IFC files** and look at them: filters by material, IFC class and storey, a section box,
-  measuring, a view cube;
+- **open IFC files** and look at them: 3D views, plans looking down or up and sections with a
+  view range, another office's plan on top to check it against, filters by material, IFC class
+  and storey, a section box, measuring, a view cube;
 - **compare** your model with another one, such as the architect's IFC, and see what only one of
   them has;
 - **draw storey plans at scale** (1:1 to 1:5000) on A4 to A0, as PDF, SVG or PNG. Plans can have

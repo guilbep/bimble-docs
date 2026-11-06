@@ -14,6 +14,7 @@ nav = [
     { "Install" = "manual/install.md" },
     { "First steps" = "manual/first-steps.md" },
     { "Looking at a model" = "manual/viewing.md" },
+    { "Views and reference plans" = "manual/views.md" },
     { "Comparing with another model" = "manual/linked-models.md" },
     { "Storey plans" = "manual/plans.md" },
     { "Editing a model" = "manual/editing.md" },

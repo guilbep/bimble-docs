@@ -18,7 +18,8 @@ With a `.bimble` model open, the toolbar shows **Undo**, **Redo**, **Save**, **E
 
 ## Change an element
 
-Click an element. The panel on the right shows its properties:
+Click an element, in a 3D view, a plan or a section. The properties panel, at the bottom left,
+shows its properties:
 
 - **Name**;
 - GlobalId, storey, material and generator, for information;
