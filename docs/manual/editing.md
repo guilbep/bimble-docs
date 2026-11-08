@@ -91,3 +91,18 @@ bimble set frame.bimble <GlobalId> height=600 -o frame2.bimble
 bimble diff frame.bimble frame2.bimble             # what changed, element by element
 bimble export-ifc frame2.bimble frame2.ifc         # IFC4, for other software
 ```
+
+## Editing an IFC file
+
+You can't edit an IFC file in place, but you can convert it into an editable `.bimble` model:
+
+```sh
+bimble import-ifc architect.ifc architect.bimble   # IFC → editable .bimble
+```
+
+The elements keep their GlobalIds, storeys and materials, so anything you change can be exported
+back to IFC4 (`bimble export-ifc`) and still matches the original. Rectangular sections become
+parametric elements you can resize in the viewer; other shapes become polygon or mesh elements,
+which you can move and rename but not resize parametrically yet. Openings are listed in the
+report and drawn uncut for now. The viewer gets an "Import IFC as editable copy…" entry in a
+coming release; until then, use the command line.
