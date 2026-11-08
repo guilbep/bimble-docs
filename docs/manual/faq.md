@@ -2,9 +2,10 @@
 
 ## Can I edit an IFC file?
 
-Not yet. IFC files open for viewing, plans and comparison. Bimble edits its own `.bimble` models,
-which it can export to IFC4 (`bimble export-ifc`). Converting an IFC into an editable `.bimble`
-model is planned.
+Not yet — it is the next milestone. IFC files open for viewing, plans and comparison. Bimble edits
+its own `.bimble` models, which it can export to IFC4 (`bimble export-ifc`). Converting an IFC into
+an editable `.bimble` model (import for editing) is in work now: first on the command line, then in
+the viewer.
 
 ## Where are my files sent?
 
