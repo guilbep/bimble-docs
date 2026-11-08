@@ -362,7 +362,9 @@ Options:
 Converts an IFC file (IFC2x3 / IFC4 / IFC4x3) into an editable `.bimble` model: columns, beams,
 slabs, walls and footings keep their GlobalIds, storeys and materials; rectangular sections come
 back as parametric elements, other extrusions as polygon generators, and explicit meshes as mesh
-elements. Openings are listed in the report and not cut yet.
+elements. Openings (`IfcOpeningElement`) are kept on the element and cut out of the mesh; property
+sets are imported as text values (`Pset/Property`); everything else is reported, never dropped
+silently.
 
 ```text
 Convert an IFC file into an editable .bimble model (ADR 0032)
@@ -385,6 +387,8 @@ Example report:
   IfcColumn: 25
   IfcFooting: 12
   IfcSlab: 2
+  openings: 33 cut on import (as meshes, subtracted at draw time)
+  property values: 410
 ```
 
 ## History

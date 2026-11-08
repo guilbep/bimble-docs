@@ -103,6 +103,8 @@ bimble import-ifc architect.ifc architect.bimble   # IFC → editable .bimble
 The elements keep their GlobalIds, storeys and materials, so anything you change can be exported
 back to IFC4 (`bimble export-ifc`) and still matches the original. Rectangular sections become
 parametric elements you can resize in the viewer; other shapes become polygon or mesh elements,
-which you can move and rename but not resize parametrically yet. Openings are listed in the
-report and drawn uncut for now. The viewer gets an "Import IFC as editable copy…" entry in a
-coming release; until then, use the command line.
+which you can move and rename but not resize parametrically yet. Openings (`IfcOpeningElement`)
+are kept on the element and cut out of the mesh, and property sets are imported as text values.
+
+In the viewer, use **Import IFC…** (Model tab): the file becomes an editable `.bimble` copy saved
+next to it, with the same name; Ctrl S writes that copy.
