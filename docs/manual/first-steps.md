@@ -4,7 +4,7 @@
 
 Start the viewer and open a file in one of these ways:
 
-- **Open…** in the title row;
+- **Open…** in the top row, or **File → Open…**;
 - drop a `.ifc` or `.bimble` file on the window;
 - from a terminal: `bimble view model.ifc`.
 

@@ -34,6 +34,8 @@ In a plan or a section, dragging pans (there is nothing to orbit), or moves the 
 | ++ctrl+k++ | Command palette: find and run any command |
 | ++esc++ | Close the palette; else stop placing; else drop the first point of a dimension; else clear the selection |
 | ++shift++ while placing | Don't snap: the point is only rounded to 10 mm |
+| ++shift++ while measuring | Keep the second point on the X, Y or Z axis through the first |
+| ++alt++ while measuring | Measure to the face under the cursor, no snapping (++option++ on macOS) |
 
 ## Editing (`.bimble` models)
 

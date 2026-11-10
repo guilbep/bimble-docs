@@ -12,14 +12,19 @@ With Bimble you can:
   them has;
 - **draw storey plans at scale** (1:1 to 1:5000) on A4 to A0, as PDF, SVG or PNG. Plans can have
   grid axes, dimension chains, a legend and your office's title block;
-- **edit** Bimble's own `.bimble` models (columns, beams, walls, slabs) with undo, and **version**
-  them: commits, branches and merges, like Git but element by element;
+- **convert any IFC** into an editable `.bimble` model, **edit** it (columns, beams, walls,
+  slabs by their dimensions; every other element moved and versioned) with undo, and **version**
+  it: commits, branches, merges and a shared folder to work together, like Git but element by
+  element;
+- **share a model for viewing** as a small `.bimbleview` file that opens in seconds, also in a
+  browser;
 - do all of it **in a browser**, with nothing to install. The files you open stay on your computer.
 
 ![The demo frame in Bimble, here in a browser](images/viewer.png)
 
 !!! warning "A preview"
-    Bimble is young. It reads IFC for viewing and plans, but edits only `.bimble` models. Report
+    Bimble is young. It reads IFC for viewing and plans, and edits `.bimble` models converted
+    from them. Report
     what doesn't work in the [issues](https://github.com/guilbep/bimble/issues).
 
 ## Where to start

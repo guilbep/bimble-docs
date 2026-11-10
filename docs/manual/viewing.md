@@ -43,6 +43,11 @@ Measure (++m++) takes dimensions on the model: two clicks make one dimension.
     Corners and edges hidden behind something are ignored.
 3. Click the first point, then the second. ++esc++ drops a first point you don't want.
 
+    - Hold ++shift++ for the second point to stay on the X, Y or Z axis through the first, the
+      one it is nearest to (as Revit's Shift and AutoCAD's Ortho).
+    - Hold ++alt++ (++option++ on macOS) to measure to the face under the cursor, without
+      snapping to corners and edges.
+
 In a plan or a section, the points also snap to the corners and lines of the view's
 [reference plans](views.md#reference-plans).
 
@@ -61,3 +66,32 @@ model is open: they aren't saved in the file yet.
 Problems found while reading a file are listed under **Warnings** at the bottom of the model navigator.
 A typical one: an opening that couldn't be cut because a wall's geometry isn't a closed solid. The
 element is then drawn uncut.
+
+## Share for viewing
+
+**File → Share for viewing… (.bimbleview)** writes a file for someone who only wants to look at
+the model: a client, a site manager, a colleague on a small laptop or in a browser. It holds what
+the viewer shows (the elements with their class, name, storey, material and shape, the storeys
+and grid axes), compressed, with each repeated shape stored once. It opens without reading the
+IFC: much faster and in much less memory. It is read-only, and it has no property sets.
+
+Open it like any model: **Open…**, drop it on the window, `bimble view model.bimbleview`, or in
+the [browser version](browser.md). From the command line:
+
+```sh
+bimble pack model.ifc model.bimbleview      # also from a .bimble model
+```
+
+It isn't offered while only part of a model is shown (below): it would look like the whole.
+
+## Models too large for the machine
+
+Before opening a file, Bimble estimates the memory it needs. When that is more than the
+[memory setting](window.md#settings) allows (80 % of the computer's memory by default; 4 GB in
+a browser), it asks what to show first: pick by storey, IFC class or material, tick the ones to show, and
+it says how much memory they need and whether that fits. **Show the chosen part** opens only that; **Show all of it
+anyway** opens everything.
+
+On the desktop, IFC files of 5 GB and more open on a machine with the memory for them. Large
+models stay smooth while you move around them: what is smallest on screen is left out while the
+view moves, at the rate set in [Settings](window.md#settings), and the still view is whole.

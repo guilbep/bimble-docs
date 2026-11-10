@@ -7,7 +7,7 @@ project line up.
 
 ## Link a model
 
-- **Links → Model…** (once a model is open), as many times as you have models to link, or
+- **Project → Model…**, or **File → Link a model…** (once a model is open), as many times as you have models to link, or
 - `bimble view structure.ifc --link architecture.ifc`.
 
 Linking a file that is already linked replaces it. Each linked model appears under **Links** in the

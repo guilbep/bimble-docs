@@ -5,7 +5,7 @@ architect, the project number, the phase…
 
 ## The page
 
-**Manage → Project information** (or "project" in the [command palette](window.md#the-command-palette))
+**Project → Project information** (also in the **File** menu) (or "project" in the [command palette](window.md#the-command-palette))
 opens it in the main view, with its own tab. It has sections:
 
 | Section | Fields (their key) |

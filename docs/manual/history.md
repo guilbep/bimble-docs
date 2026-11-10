@@ -1,8 +1,8 @@
 # History: versions and variants
 
 Bimble keeps the history of a `.bimble` model next to it: `house.bimble` keeps its history in
-`house.bimble-history/`. Copy both and you copy the project with its whole history. There's no
-server, and you don't need Git.
+`house.bimble-history/`. Copy both and you copy the project with its whole history. You don't need
+Git, and to [work together](#working-together) a shared folder is enough.
 
 The ideas are Git's:
 
@@ -15,7 +15,7 @@ text.
 
 ## In the viewer
 
-With a `.bimble` model open, click **Manage → History**.
+With a `.bimble` model open, click **Manage → History** (or **File → History…**).
 
 - **No history yet:** type a message and click **Start history and commit**.
 - **On a branch:** the window shows the branch and how many changes aren't committed. Type a
@@ -60,6 +60,33 @@ A revision can be:
 
 The author is `--author`, else `$BIMBLE_AUTHOR`, else your user name.
 
+## Working together
+
+Several people can work on the same model through a **shared folder** (a network drive, or a
+synced folder) that holds the shared history. Each person works on a local copy and
+synchronizes with it, as with Git.
+
+```sh
+bimble history remote frame.bimble /mnt/office/frame-history   # share this history there
+bimble history push frame.bimble                               # send your commits
+
+# a colleague:
+bimble history clone /mnt/office/frame-history frame.bimble     # a local copy, with its history
+bimble history borrow frame.bimble <GlobalId> <GlobalId>        # say which elements you change
+# … edit, commit …
+bimble history sync frame.bimble                               # fetch, merge, push, give back
+```
+
+- **Push** is refused unless it only adds to the shared history: synchronize first.
+- **Sync** fetches what others pushed, merges it into your branch (as [below](#how-merging-works)),
+  pushes the result and gives back the elements you borrowed. On a conflict nothing is pushed;
+  `--prefer ours` or `--prefer theirs` decides for all the conflicting fields.
+- **Borrowing** an element tells the others you are changing it. While it is borrowed, their
+  synchronize stops if they changed it too, until you have synchronized.
+- The folder is locked while someone writes to it, and every object is checked when copied.
+
+This works from the command line for now; a **Collaborate** tab in the viewer is planned.
+
 ## How merging works
 
 Elements, storeys and materials are matched by GlobalId. For each one:
@@ -85,6 +112,9 @@ When the current branch is simply behind, merging moves it forward with no merge
 - `bimble history switch` refuses to drop changes that aren't committed. `--force` drops them.
 - The history checks itself: every stored object is checked against its hash when read, and damage
   is reported instead of used.
-- An element that didn't change between commits is stored once. A commit that renames one beam
-  adds three small files.
+- An element that didn't change between commits is stored once, and so is a shape repeated
+  across elements. Stored objects are compressed. A commit that renames one beam adds a few
+  small files.
+- After upgrading to Bimble 0.12, `history status` lists elements with meshes as changed
+  once: how they are stored changed, not the elements. Commit them.
 - In a browser, the history isn't available yet.

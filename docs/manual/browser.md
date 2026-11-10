@@ -8,9 +8,13 @@ on your computer**: the page reads them in the browser and uploads nothing.
 
 ## Use it
 
-- Open a file with **Open…**, or drop it on the page.
+- Open a file with **Open…**, or drop it on the page. A `.bimbleview` file
+  ([Share for viewing](viewing.md#share-for-viewing)) opens fastest and in the least memory.
+- `?url=` opens a model from an address when the page loads, e.g.
+  `https://guilbep.github.io/bimble/?url=https://example.org/model.bimbleview` (the server must
+  allow it: CORS). `?gl=1` forces WebGL2.
 - Everything in this manual works the same way, except:
-    - **Save**, **Export PDF…**, **Export SVG…** and **Save…** in the style editor download the file;
+    - **Save**, **Share for viewing…**, **Export PDF…**, **Export SVG…** and **Save…** in the style editor download the file;
     - the [history](history.md) isn't available yet: **Manage → History** is hidden;
     - an IFC's views are saved by downloading `model.ifc.bimble-views.json`. To get them back, open
       the IFC, then open (or drop) that file: Bimble recognises it, checks that its plans are on
@@ -37,7 +41,9 @@ models therefore take longer to open:
 | 21 MB | 398–410 ms | 837 ms |
 
 Measured on a 2-core test machine with software graphics; 1 run in the browser, 3 on the desktop.
-A browser page can use at most 4 GB of memory, which may limit very large models.
+A browser page can use at most 4 GB of memory. A model that needs more asks
+[which part to show](viewing.md#models-too-large-for-the-machine); a `.bimbleview` of it needs
+far less.
 
 The page downloads about 5 MB the first time (compressed).
 

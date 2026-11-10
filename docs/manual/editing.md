@@ -13,7 +13,7 @@ bimble demo frame.bimble
 bimble view frame.bimble
 ```
 
-With a `.bimble` model open, the title row's **Undo**, **Redo** and **Save** work, the **Model**
+With a `.bimble` model open, the top row's **Undo**, **Redo** and **Save** work, the **Model**
 tab places elements, and **Manage → History** keeps versions.
 
 ## Change an element
@@ -100,11 +100,36 @@ You can't edit an IFC file in place, but you can convert it into an editable `.b
 bimble import-ifc architect.ifc architect.bimble   # IFC → editable .bimble
 ```
 
-The elements keep their GlobalIds, storeys and materials, so anything you change can be exported
-back to IFC4 (`bimble export-ifc`) and still matches the original. Rectangular sections become
-parametric elements you can resize in the viewer; other shapes become polygon or mesh elements,
-which you can move and rename but not resize parametrically yet. Openings (`IfcOpeningElement`)
-are kept on the element and cut out of the mesh, and property sets are imported as text values.
+Every element with a shape comes along. The elements keep their GlobalIds, storeys and
+materials, so anything you change can be exported back to IFC4 (`bimble export-ifc`) and still
+matches the original.
 
-In the viewer, use **Import IFC…** (Model tab): the file becomes an editable `.bimble` copy saved
-next to it, with the same name; Ctrl S writes that copy.
+- **Columns, beams, walls, slabs and footings** with rectangular sections become parametric
+  elements you can resize in the viewer; other shapes of these classes become polygon or mesh
+  elements, which you can move and rename but not resize yet.
+- **Every other element** (doors, windows, pipes, fittings, ducts, equipment…) becomes an
+  `IfcBuildingElementProxy` that keeps its own IFC class name, shown wherever a class is shown.
+  You can select it, move it, give it properties and version it, not resize it. Exported to IFC,
+  it is written as a proxy with its class in `ObjectType`, and importing that file again gives
+  the class back.
+- **Openings** (`IfcOpeningElement`) are kept on the element and cut out of the mesh, and
+  property sets are imported as text values.
+
+In the viewer:
+
+- **File → Import IFC…** picks an IFC and makes an editable `.bimble` copy next to it, with the
+  same name; ++ctrl+s++ writes that copy.
+- **File → Convert to .bimble (editable)…** does the same for the IFC that is open. Its tooltip
+  says how many elements become editable by dimensions.
+
+## The `.bimble` file
+
+A `.bimble` file is binary and compressed: typically 17 times smaller than the IFC it came from
+(5 to 46 times on the models measured). A shape that repeats (a sprinkler head, a bolt, a fitting)
+is stored once. Files written by Bimble 0.11 and older, which were JSON text, still open.
+
+To read a model as text, or check it with other tools, write it to a name ending in `.json`:
+`bimble import-ifc model.ifc model.json`, or `bimble set … -o model.json`.
+
+!!! warning "Bimble 0.11 and older can't open files saved by 0.12"
+    When you share `.bimble` files, upgrade together, or share them as `.json`.
