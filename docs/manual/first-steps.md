@@ -3,7 +3,8 @@
 ## Home
 
 Bimble starts on **Home**: who you are (set in [Settings → You](window.md#settings)), **Open…**,
-**Import IFC…**, and on the desktop the files you opened last, a click away. The house button at
+**Import IFC…**, and on the desktop the files you opened last, a click away, each with a small
+picture of how it looked when opened. The house button at
 the top left brings Home back; **Back to the model** leaves it.
 
 ## Open a model
