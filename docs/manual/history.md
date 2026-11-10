@@ -71,8 +71,14 @@ synchronizes with it, as with Git.
 On the desktop, with a `.bimble` model open:
 
 1. Set who you are once: **Settings → You** (name, e-mail).
-2. **Collaborate → Shared folder…** and pick the shared folder. A model without a history gets
-   one, with a first commit.
+2. **Collaborate → Shared folder…** and pick the shared folder.
+    - The first person: the folder gets the shared history, starting from your model.
+    - The others: open your copy of the model and pick the same folder. Your copy becomes the
+      shared model (if it differed, it is kept beside it as `….before-sharing.bimble`). A copy
+      that has a history of its own is refused: use a copy of the file without its `-history`
+      folder.
+    - A folder that isn't there (a network drive not connected) is never created by mistake:
+      Synchronize says it can't be reached.
 3. Work as usual. The first time you change an element (or create one), it is **borrowed** for
    you on the shared folder: the others can't change it until you synchronize. If someone else
    has it, Bimble says *"IfcBeam B12 belongs to Ana"* and offers **Synchronize** or **Cancel**.
