@@ -20,6 +20,7 @@ Commands:
   set            Change one generator parameter, e.g. `bimble set f.bimble <GlobalId> height=600 -o g.bimble`
   diff           Element-level diff between two .bimble files
   export-ifc     Export to IFC4
+  import-ifc     Convert an IFC file into an editable .bimble model
   history        Model history: commits, branches, log, diff and merge (kept in <model>-history/)
   bench          Measure rendering speed on this machine (generated models of 1k–50k elements, plus files)
   render         Render a .ifc or .bimble file to a PNG, without a window
@@ -354,6 +355,40 @@ Arguments:
 
 Options:
   -h, --help  Print help
+```
+
+### import-ifc
+
+Converts an IFC file (IFC2x3 / IFC4 / IFC4x3) into an editable `.bimble` model: columns, beams,
+slabs, walls and footings keep their GlobalIds, storeys and materials; rectangular sections come
+back as parametric elements, other extrusions as polygon generators, and explicit meshes as mesh
+elements. Openings (`IfcOpeningElement`) are kept on the element and cut out of the mesh; property
+sets are imported as text values (`Pset/Property`); everything else is reported, never dropped
+silently.
+
+```text
+Convert an IFC file into an editable .bimble model (ADR 0032)
+
+Usage: bimble import-ifc <FILE> <OUT>
+
+Arguments:
+  <FILE>  
+  <OUT>   
+
+Options:
+  -h, --help  Print help
+```
+
+Example report:
+
+```text
+73 elements → frame.bimble (73 parametric, 0 extruded polygons, 0 meshes)
+  IfcBeam: 34
+  IfcColumn: 25
+  IfcFooting: 12
+  IfcSlab: 2
+  openings: 33 cut on import (as meshes, subtracted at draw time)
+  property values: 410
 ```
 
 ## History
