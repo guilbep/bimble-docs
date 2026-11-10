@@ -4,7 +4,7 @@
 
 From top to bottom:
 
-- **Top row**: **Bimble**, the [**File** menu](#the-file-menu), the ribbon's tabs; at the right
+- **Top row**: **Bimble** (its version on hover; a click opens About), the [**File** menu](#the-file-menu), the ribbon's tabs; at the right
   the file's name and what isn't saved (cut short when the row is full, whole on hover), then
   **Open**, **Save**, **Undo**, **Redo** as icons and the [command palette](#the-command-palette)
   button.
@@ -30,7 +30,7 @@ preparing the view…), how far it is, the time spent and a progress bar.
 | Share | **Share for viewing… (.bimbleview)** ([viewing](viewing.md#share-for-viewing)) |
 | Links | **Link a model…** ([linked models](linked-models.md)), **Reference plan (DXF, PDF)…** ([views](views.md)) |
 | Paper | **On paper…** ([plans](plans.md)) |
-| Project | **Project information** ([project](project.md)), **Settings…** ([below](#settings)) |
+| Project | **Project information** ([project](project.md)), **Settings…** ([below](#settings)), **About Bimble…**: the version, graphics card and system, with **Copy for a bug report** |
 | | **History…** and **Exit**, on the desktop |
 
 ## The ribbon
