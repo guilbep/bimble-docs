@@ -14,6 +14,28 @@ view's at the bottom of the left panel:
 In a `.bimble` model, the same panel lets you change the element: see
 [Editing a model](editing.md).
 
+## Selecting several elements
+
+Hold ++ctrl++ (++cmd++ on macOS) and click to add an element to the selection, or take it out.
+A plain click selects one element again. The properties show the element clicked first.
+
+## Hide and isolate
+
+Select one or more elements, then use **View → Visibility** or right-click on the view:
+
+| Command | Does |
+|---|---|
+| **Hide for now** | Hides them until you leave the view or close the model |
+| **Isolate for now** | Shows only them, for now |
+| **Hide in view** | Hides them in this view, saved with it |
+| **Isolate in view** | Shows only them in this view, saved with it (new elements stay hidden until unhidden) |
+| **Reveal hidden** | Shows what is hidden, in another colour, so you can select it |
+| **Unhide in view** | With Reveal hidden on: shows the selected hidden elements again |
+
+What is hidden is always said in the status bar: *For now: 3 hidden ×* (its **×** shows them
+again) and, for the view, *Hidden: 2 elements, 4 isolated ×* (its **×** shows everything in the
+view).
+
 ## Section box
 
 The section box is for 3D views; plans and sections are cut by their [view range](views.md#view-range)

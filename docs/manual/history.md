@@ -66,6 +66,26 @@ Several people can work on the same model through a **shared folder** (a network
 synced folder) that holds the shared history. Each person works on a local copy and
 synchronizes with it, as with Git.
 
+### In the viewer
+
+On the desktop, with a `.bimble` model open:
+
+1. Set who you are once: **Settings → You** (name, e-mail).
+2. **Collaborate → Shared folder…** and pick the shared folder. A model without a history gets
+   one, with a first commit.
+3. Work as usual. The first time you change an element (or create one), it is **borrowed** for
+   you on the shared folder: the others can't change it until you synchronize. If someone else
+   has it, Bimble says *"IfcBeam B12 belongs to Ana"* and offers **Synchronize** or **Cancel**.
+4. **Collaborate → Synchronize** saves, commits what isn't committed, gets the others' work,
+   merges it with yours, sends the result and gives back what you borrowed. On a conflict
+   nothing is sent and the conflicts are listed.
+
+After 4 hours without synchronizing, the status bar says so (*Not synchronized for 4 h*); click
+it to synchronize. If the shared folder can't be reached, your change goes on and Synchronize
+checks again later.
+
+### From the command line
+
 ```sh
 bimble history remote frame.bimble /mnt/office/frame-history   # share this history there
 bimble history push frame.bimble                               # send your commits
@@ -84,8 +104,6 @@ bimble history sync frame.bimble                               # fetch, merge, p
 - **Borrowing** an element tells the others you are changing it. While it is borrowed, their
   synchronize stops if they changed it too, until you have synchronized.
 - The folder is locked while someone writes to it, and every object is checked when copied.
-
-This works from the command line for now; a **Collaborate** tab in the viewer is planned.
 
 ## How merging works
 

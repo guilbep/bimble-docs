@@ -112,8 +112,8 @@ or a section to check that the geometry matches and to measure on it.
 ### Add one
 
 1. Open the plan or section.
-2. In its properties, under **Reference plans**, click **Add reference plan…**, or drop the file on
-   the window.
+2. **Collaborate → Link DXF** or **Link PDF**; or, in the view's properties under **Reference
+   plans**, **Add reference plan…**; or drop the file on the window.
 3. Pick the file:
     - **DXF**: read with its units (`$INSUNITS`; millimetres when the file doesn't say). Lines,
       arcs, circles, ellipses, polylines (with arcs), splines, solids, and blocks are read, from
@@ -140,7 +140,8 @@ far apart they are.
 
 ### Hide or remove it
 
-The tick box next to its name shows or hides it; **Remove** takes it out of the view.
+The tick box next to its name shows or hides it; **Remove** takes it out of the view. A new version of the file: **Collaborate → Manage links → Reload** (or **Reload from…**),
+and the lines change where the plan was placed.
 
 ## On paper
 

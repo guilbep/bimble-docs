@@ -4,7 +4,8 @@
 
 From top to bottom:
 
-- **Top row**: **Bimble** (its version on hover; a click opens About), the [**File** menu](#the-file-menu), the ribbon's tabs; at the right
+- **Top row**: **Bimble** (its version on hover; a click opens About), the house button for
+  [Home](first-steps.md#home), the [**File** menu](#the-file-menu), the ribbon's tabs; at the right
   the file's name and what isn't saved (cut short when the row is full, whole on hover), then
   **Open**, **Save**, **Undo**, **Redo** as icons and the [command palette](#the-command-palette)
   button.
@@ -28,7 +29,7 @@ preparing the view…), how far it is, the time spent and a progress bar.
 |---|---|
 | Files | **Open…**, **Import IFC…**, **Convert to .bimble (editable)…** ([editing](editing.md#editing-an-ifc-file)), **Save** |
 | Share | **Share for viewing… (.bimbleview)** ([viewing](viewing.md#share-for-viewing)) |
-| Links | **Link a model…** ([linked models](linked-models.md)), **Reference plan (DXF, PDF)…** ([views](views.md)) |
+| Links | **Link IFC…** ([linked models](linked-models.md)), **Link DXF…**, **Link PDF…** ([reference plans](views.md#reference-plans)), **Manage links…** ([below](#manage-links)) |
 | Paper | **On paper…** ([plans](plans.md)) |
 | Project | **Project information** ([project](project.md)), **Settings…** ([below](#settings)), **About Bimble…**: the version, graphics card and system, with **Copy for a bug report** |
 | | **History…** and **Exit**, on the desktop |
@@ -37,12 +38,23 @@ preparing the view…), how far it is, the time spent and a progress bar.
 
 | Tab | Groups and tools |
 |---|---|
-| **Project** | *Project*: Project information ([project](project.md)). *Links*: Model… ([linked models](linked-models.md)), Reference plan… ([views](views.md)) |
+| **Project** | Project information ([project](project.md)) |
+| **Collaborate** | *Links*: Link IFC ([linked models](linked-models.md)), Link DXF, Link PDF ([reference plans](views.md#reference-plans)), Manage links ([below](#manage-links)). *Work together*: Shared folder, Synchronize ([history](history.md#in-the-viewer_1)) |
 | **Model** | *Place*: Column, Beam, Wall, Slab ([editing](editing.md)). *Inspect*: Measure |
 | **Annotate** | *On the sheet*: Select, Text, Dimension, and the text and dimension types they use ([sheets](sheets.md)). *On plans*: Section labels, Openings, Section marks, Levels ([plans](plans.md#what-a-plan-shows)) |
-| **View** | *Show*: Edges, Hatching, Orthographic. *Cut*: Section box, Box to selection. *Camera*: Fit all, Top |
+| **View** | *Show*: Edges, Hatching, Orthographic. *Cut*: Section box, Box to selection. *Camera*: Fit all, Top. *Visibility*: Hide, Isolate, Hide in view, Isolate in view, Reveal hidden, Unhide ([hide and isolate](viewing.md#hide-and-isolate)) |
 | **Sheets** | New sheet, Close sheet; *Export*: On paper… ([plans](plans.md)) |
-| **Manage** | Graphic standards ([styles](styles.md)), Materials ([materials](materials.md)), History ([history](history.md), desktop) |
+| **Manage** | Graphic standards ([styles](styles.md)), Materials ([materials](materials.md)), History ([history](history.md), desktop), Settings ([below](#settings)) |
+
+## Manage links
+
+**Collaborate → Manage links** lists every file linked to the model, by type: IFC and Bimble
+models, DXF plans, PDF plans (with the view each plan is in). For each one:
+
+- **Reload** reads it again from where it was read (on the desktop), after the other office sent
+  a new version under the same name;
+- **Reload from…** replaces it with another file, kept where it was placed;
+- **Delete** removes it.
 
 ## Nothing implicit
 
@@ -69,9 +81,12 @@ ribbon is there, and so is every view ("Go to Plan Level 1"), sheet and schedule
 
 ## Settings
 
-**File → Settings…** holds what belongs to this computer, not to a model. It is saved in
+**File → Settings…** (also **Manage → Settings**) holds what belongs to this computer, not to a model. It is saved in
 Bimble's `settings.json` (in a browser, the browser's storage) and applies to every model.
 
+- **You**: your name and e-mail. They are written as the author of your commits and on the
+  elements you borrow when [working together](history.md#working-together) ("this element
+  belongs to …").
 - **Appearance**: the **theme** (Grey by default, Dark, Light, Solarized dark and light, High
   contrast; every text readable on every surface), the **font** (Roboto or Ubuntu Light) and the
   **text size** (10–16 pt, 12 by default). Changes apply at once.

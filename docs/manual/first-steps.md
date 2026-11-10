@@ -1,10 +1,17 @@
 # First steps
 
+## Home
+
+Bimble starts on **Home**: who you are (set in [Settings → You](window.md#settings)), **Open…**,
+**Import IFC…**, and on the desktop the files you opened last, a click away. The house button at
+the top left brings Home back; **Back to the model** leaves it.
+
 ## Open a model
 
-Start the viewer and open a file in one of these ways:
+Open a file in one of these ways:
 
-- **Open…** in the top row, or **File → Open…**;
+- **Open…** on Home or in the top row, or **File → Open…**;
+- a recent file on Home;
 - drop a `.ifc` or `.bimble` file on the window;
 - from a terminal: `bimble view model.ifc`.
 
