@@ -6,7 +6,7 @@ From top to bottom:
 
 - **Top row**: **Bimble** (its version on hover; a click opens About), the house button for
   [Home](first-steps.md#home), the [**File** menu](#the-file-menu), the ribbon's tabs; at the right
-  the file's name and what isn't saved (cut short when the row is full, whole on hover), then
+  the file's name (with its IFC schema, IFC2X3 or IFC4) and what isn't saved (cut short when the row is full, whole on hover), then
   **Open**, **Save**, **Undo**, **Redo** as icons and the [command palette](#the-command-palette)
   button.
 - **Ribbon**: tabs of tools, in named groups. A tool that is on looks pressed; one that can't be
@@ -30,9 +30,9 @@ preparing the view…), how far it is, the time spent and a progress bar.
 | Group | Entries |
 |---|---|
 | Files | **Open…**, **Import IFC…**, **Convert to .bimble (editable)…** ([editing](editing.md#editing-an-ifc-file)), **Save** |
-| Share | **Share for viewing… (.bimbleview)** ([viewing](viewing.md#share-for-viewing)) |
+| Share | **Share for viewing… (.bimbleview)** ([viewing](viewing.md#share-for-viewing)), **Export IFC4…**, **Export IFC2x3…** (a .bimble model; IFC2x3 for tools that read only that: it leaves out material values and the map conversion) |
 | Links | **Link IFC…** ([linked models](linked-models.md)), **Link DXF…**, **Link PDF…** ([reference plans](views.md#reference-plans)), **Manage links…** ([below](#manage-links)) |
-| Paper | **On paper…** ([plans](plans.md)) |
+| Paper | **Export view…** ([plans](plans.md)) |
 | Project | **Project information** ([project](project.md)), **Settings…** ([below](#settings)), **About Bimble…**: the version, graphics card and system, with **Copy for a bug report** |
 | | **History…** and **Exit**, on the desktop |
 

@@ -68,8 +68,10 @@ plan's cut), and of the point you snap to while measuring:
 
 - in the model's **survey system**: for Swiss models **LV95**, the Swiss way,
   `E 2'600'123.45 N 1'200'456.78 · 432.10 m (LV95)`;
-- or, in **Settings → Coordinates**, in **WGS84** latitude and longitude (GPS), worked out from
-  LV95 to about a metre.
+- or, in **Settings → Coordinates**: **WGS84** latitude and longitude (GPS), **ETRS89 / UTM** in
+  the point's zone (Europe), or another system: Swiss **LV03**, or a **US State Plane** zone
+  (NAD83, in metres, feet or US survey feet; type a state or "ftUS" to find it). They are worked out
+  from the model's survey system (as PROJ does).
 
 A model whose survey system isn't known shows metres in its own coordinates.
 
@@ -170,11 +172,33 @@ far apart they are.
 The tick box next to its name shows or hides it; **Remove** takes it out of the view. A new version of the file: **Collaborate → Manage links → Reload** (or **Reload from…**),
 and the lines change where the plan was placed.
 
-## On paper
+## Model and On paper
 
-Any plan, ceiling plan or section can be printed at scale: **Sheets → On paper…** draws the view
-you are looking at. See [Plans and sections on paper](plans.md), and [Sheets](sheets.md) to put
-several views on one page.
+A plan, ceiling plan or section has two pictures, switched at the right of its tab (**Model** |
+**On paper**) or with ++p++:
+
+- **Model**: the model itself, instant even on large models, where elements are placed, moved and
+  measured.
+- **On paper**: exactly the drawing its PDF and sheets are made of: pens and texts at the view's
+  scale, hatches, dashed lines above the cut, grid axes, dimension chains, the view's own
+  dimensions and texts. Scroll zooms at the pointer, a drag pans, ++f++ fits. The status bar says
+  the scale, the scale it is seen at on screen, and how long it took to draw.
+
+On paper, a click **selects** the element drawn there: the one cut there, or seen below. Its
+properties show on the left and its outline on the paper; ++ctrl++ (++cmd++ on a Mac) adds to the
+selection. Pointing at an element names it in the status bar. **Double-click** goes to the model at
+that place. Placing and measuring switch to Model. Both pictures show the same view: its range,
+visibility, scale and annotations.
+
+### Scale
+
+A view's **Scale 1:** (its properties) sets its pens, texts and dimensions on paper and on
+screen, and its size on every sheet it is placed on. To show a plan at two scales, duplicate the
+view. A file from before 0.15 whose sheets placed a view at another scale opens with the view
+taking that scale, as a change to save.
+
+To print or export a view, **Sheets → Export view…** ([Plans and sections on paper](plans.md));
+[Sheets](sheets.md) put several views on one page.
 
 ## Where views are saved
 

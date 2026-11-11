@@ -20,12 +20,13 @@ landscape) and the title block's fields (phase, revision, drawn, checked…).
 
 ## Place views
 
-Drag a plan, ceiling plan or section from **Views** onto the sheet. It is placed at 1:100 under
-the pointer.
+Drag a plan, ceiling plan or section from **Views** onto the sheet. It is placed at its
+[scale](views.md#scale) under the pointer.
 
 - Click it to select it, then drag it to move it.
-- Change its **scale** in the properties; **Remove from sheet** (or ++delete++) takes it off.
-- **Double-click** it to open the view, where the model is edited.
+- Its **scale** is the view's: changing it here changes the view, on every sheet and on screen.
+  **Remove from sheet** (or ++delete++) takes it off.
+- **Double-click** it to open the view On paper.
 
 ## Texts and dimensions
 

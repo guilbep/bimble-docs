@@ -32,20 +32,18 @@ All of this can be changed with a [plan template](#your-offices-plans-templates)
 
 ## In the viewer
 
-Open a model, then **Sheets → On paper…** (the window is called **On paper**):
+To see a view as it prints, open it and choose **On paper** in its tab (++p++, see
+[Model and On paper](views.md#model-and-on-paper)). To save it, **Sheets → Export view…**:
 
 | Setting | What it does |
 |---|---|
 | Draw | **Storey plan**, or one of the model's plans, ceiling plans and sections. It starts on the view you are looking at |
 | Storey | The storey to draw (storey plan only) |
-| Scale 1: | 1:N; type a number or pick 50, 100, 200, 500 |
+| Scale 1: | A view's own [scale](views.md#scale); a storey plan's: type a number or pick 50, 100, 200, 500 |
 | Paper | A4…A0, or **Smallest that fits** (landscape or portrait) |
 | Cut height | Height of the cut plane above the storey level, mm (storey plan only; a view uses its view range) |
 | Seen fills, Axes, Dimensions, Legend, Levels | Switch those parts on or off |
 | Template… | Load a plan template (JSON); **Default** goes back to the built-in one |
-
-Tick **Preview** to see the sheet as it will print. Drag the slider to zoom in. The preview is
-redrawn when a setting changes.
 
 **Export PDF…** and **Export SVG…** save the sheet. In a browser they download it.
 
