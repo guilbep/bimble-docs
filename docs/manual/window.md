@@ -14,10 +14,12 @@ From top to bottom:
 - **Left**: the project browser (views, layouts, objects, links), and under it the properties of
   what is selected, else of the view. While you place an element, they show its storey and sizes.
 - **Tabs** of the views and sheets you opened, over the drawing. Click one to go back to it; **×**
-  or a middle click closes it.
+  or a middle click closes it. A right click offers **Close**, **Close other tabs** and **Close all
+  tabs**; with no tab left, [Home](first-steps.md#home) shows (the model stays open).
 - **Right**: the [Standards](styles.md) panel, when open.
-- **Status bar**: what a click does now (place a column, measure, add a text…), the state chips
-  (below), then the counts: elements shown, triangles, load time, the model's memory, and the
+- **Status bar**: what a click does now (place a column, measure, add a text…), the
+  [coordinates](views.md#coordinates) of the point under the pointer, the state chips (below), then
+  the counts (sizes in kB, MB or GB): elements shown, triangles, load time, the model's memory, and the
   pictures drawn per second (*idle* when nothing moves).
 
 While a file opens, a card over the 3D view shows the file, the step (reading, geometry,
@@ -87,6 +89,8 @@ Bimble's `settings.json` (in a browser, the browser's storage) and applies to ev
 - **You**: your name and e-mail. They are written as the author of your commits and on the
   elements you borrow when [working together](history.md#working-together) ("this element
   belongs to …").
+- **Coordinates**: the survey system of the model (LV95 for Swiss models) or WGS84 latitude and
+  longitude, for the [coordinates](views.md#coordinates) in the status bar.
 - **Appearance**: the **theme** (Grey by default, Dark, Light, Solarized dark and light, High
   contrast; every text readable on every surface), the **font** (Roboto or Ubuntu Light) and the
   **text size** (10–16 pt, 12 by default). Changes apply at once.

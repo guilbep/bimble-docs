@@ -52,6 +52,27 @@ In a plan or a section:
 **Ceiling plans** look up at the underside of the floor above, like a reflected ceiling plan:
 north stays at the top and east on the right.
 
+### Project north and true north
+
+As in Revit, plans and sections are drawn in **project north**: along the building, whatever its
+turn in the site. Bimble reads the turn from the IFC (the building's placement, or an IFC4 map
+conversion). A section **looking north** looks along the building's north, on screen and on
+paper. To draw a view with true north at the top, set its **Orientation** to **True north** in
+the view's properties. A model whose building isn't turned is drawn the same either way.
+`bimble info` prints the survey system and the turn.
+
+### Coordinates
+
+The status bar gives the coordinates of the point under the pointer (on an element, or on a
+plan's cut), and of the point you snap to while measuring:
+
+- in the model's **survey system**: for Swiss models **LV95**, the Swiss way,
+  `E 2'600'123.45 N 1'200'456.78 · 432.10 m (LV95)`;
+- or, in **Settings → Coordinates**, in **WGS84** latitude and longitude (GPS), worked out from
+  LV95 to about a metre.
+
+A model whose survey system isn't known shows metres in its own coordinates.
+
 ![A section looking north through the demo frame](../images/section.png)
 
 ### View range
@@ -96,7 +117,13 @@ A section's properties set:
 
 Each view has its own **Visibility** list: material families, IFC classes and storeys. Untick one
 to hide it in this view only. The plan of a storey can hide the footings while the 3D view shows
-everything.
+everything. Sheets and PDFs of the view leave out the same.
+
+Each family opens (▸) into the **materials** found in the model, each with its own checkbox, and a
+drop-down to draw that material as **another family** (its colour and hatches): useful when
+*Other* holds most of the model. That choice is saved in the [graphic standards](styles.md), so it
+applies to every model; the Standards panel lists the moved materials, each with × to undo it. A
+click on a family's colour square opens its colour in the Standards panel.
 
 ## Reference plans
 

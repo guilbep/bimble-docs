@@ -95,7 +95,10 @@ element is then drawn uncut.
 the model: a client, a site manager, a colleague on a small laptop or in a browser. It holds what
 the viewer shows (the elements with their class, name, storey, material and shape, the storeys
 and grid axes), compressed, with each repeated shape stored once. It opens without reading the
-IFC: much faster and in much less memory. It is read-only, and it has no property sets.
+IFC: much faster and in much less memory. It is read-only. It leaves out property sets and
+quantities, types, views, sheets, schedules, annotations, reference plans, linked models and the
+history (Bimble says so when it saves one, and on what you select in one); families are as
+imported, not as your standards move them.
 
 Open it like any model: **Open…**, drop it on the window, `bimble view model.bimbleview`, or in
 the [browser version](browser.md). From the command line:
