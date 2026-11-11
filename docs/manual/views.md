@@ -190,6 +190,18 @@ selection. Pointing at an element names it in the status bar. **Double-click** g
 that place. Placing and measuring switch to Model. Both pictures show the same view: its range,
 visibility, scale and annotations.
 
+### Crop
+
+A plan or section can draw only part of itself: in its properties, tick **Crop** (it starts from the
+whole model), then **To the screen** to keep what the screen shows now (zoom on the part you want,
+then click), or type the extent in metres (x along, y across; for a section, along the cut and
+height). Model and On paper are cropped alike; the drawing's axes, dimension chains and page follow
+the crop. Untick **Crop** to see it all again.
+
+When a view changes, its drawing On paper (and a sheet's) is made again in the background: the last
+one stays, greyed, with **Drawing… n s**, and the window can be used meanwhile. A section through a
+very large model can take several seconds.
+
 ### Scale
 
 A view's **Scale 1:** (its properties) sets its pens, texts and dimensions on paper and on
